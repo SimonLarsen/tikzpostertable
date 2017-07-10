@@ -1,0 +1,15 @@
+\newcounter{tablecounter}
+\newenvironment{tikztable}[1][]{
+  \def \rememberparameter{#1}
+  \vspace{7mm}
+  \refstepcounter{tablecounter}
+  \begin{center}
+  }{
+    \ifx\rememberparameter\@empty
+    \else %nothing
+    \\[10pt]
+    {Table~\thetablecounter: \rememberparameter}
+    \fi
+  \end{center}
+  \vspace{7mm}
+}
